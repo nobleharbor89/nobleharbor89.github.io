@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>兔崽baby tuzaibaby每日大赛-赛事动态与作品解析</title>
+  <meta name="description" content="兔崽baby tuzaibaby每日大赛聚焦每日创意挑战与作品评选。发布赛事日程、主题作品、评审规则与选手反馈，提供参赛指南、历史榜单与常见问题解答，帮助创作者了解每日大赛节奏与评判标准。">
+  <meta name="keywords" content="兔崽baby tuzaibaby每日大赛">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ffb7c5'/%3E%3Ccircle cx='32' cy='36' r='9' fill='%23fff'/%3E%3Ccircle cx='68' cy='36' r='9' fill='%23fff'/%3E%3Ccircle cx='32' cy='36' r='4' fill='%235e3b4a'/%3E%3Ccircle cx='68' cy='36' r='4' fill='%235e3b4a'/%3E%3Cellipse cx='50' cy='62' rx='11' ry='8' fill='%23fff'/%3E%3Cpath d='M42 62 Q50 70 58 62' stroke='%235e3b4a' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --pink: #f7a1b5;
+      --pink-deep: #e06d8a;
+      --cream: #fff7f0;
+      --ink: #2e2228;
+      --ink-soft: #6f5f67;
+      --line: #eedde4;
+      --card-bg: #ffffff;
+      --accent: #8fc9c1;
+      --shadow: 0 4px 16px rgba(224, 109, 138, 0.10);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --font-base: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+      --space: 1rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --maxw: 1160px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-base);
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 16px;
+      padding-top: 88px;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--pink-deep); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* 吸顶公告条 + 页头 */
+    .top-announce {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--pink-deep);
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .top-announce strong { font-weight: 700; }
+    .site-header {
+      position: fixed;
+      top: 36px; left: 0; right: 0;
+      z-index: 99;
+      background: rgba(255, 247, 240, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+    .brand span { color: var(--pink-deep); }
+    .nav-main {
+      display: flex;
+      gap: 0.2rem;
+      flex-wrap: wrap;
+    }
+    .nav-main a {
+      font-size: 0.9rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 99px;
+      color: var(--ink-soft);
+      transition: background 0.2s;
+    }
+    .nav-main a:hover, .nav-main a:focus-visible {
+      background: var(--pink);
+      color: #fff;
+      text-decoration: none;
+    }
+    .header-search {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 0.25rem 0.6rem;
+    }
+    .header-search input {
+      border: none;
+      outline: none;
+      font-size: 0.85rem;
+      width: 110px;
+      background: transparent;
+      color: var(--ink);
+    }
+    .header-search button {
+      background: var(--pink);
+      border: none;
+      color: #fff;
+      border-radius: 99px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.8rem;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 0.3rem 0.6rem;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    /* 全局容器 */
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+
+    /* 锚点偏移 */
+    [id] { scroll-margin-top: 100px; }
+
+    /* 首屏 */
+    .hero {
+      padding: var(--space-xl) 0 var(--space-lg);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: 2.4rem;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+    .hero-text h1 em {
+      font-style: normal;
+      color: var(--pink-deep);
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      margin-bottom: 1.2rem;
+      max-width: 36em;
+    }
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--pink-deep);
+      color: #fff;
+      padding: 0.6rem 1.4rem;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      transition: transform 0.15s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); text-decoration: none; color: #fff; }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid var(--pink-deep);
+      color: var(--pink-deep);
+      padding: 0.6rem 1.4rem;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: var(--pink); color: #fff; text-decoration: none; }
+
+    /* 首屏视觉 — 原创 SVG 构图 */
+    .hero-visual {
+      position: relative;
+      height: 260px;
+    }
+    .hero-visual .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--pink);
+      opacity: 0.25;
+    }
+    .hero-visual svg { width: 100%; height: 100%; position: relative; z-index: 1; }
+
+    /* 主内容区：左侧单栏 + 右侧栏 */
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--space-lg);
+      padding-bottom: var(--space-xl);
+    }
+
+    /* 通用板块 */
+    .section {
+      margin-bottom: var(--space-xl);
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      border-left: 5px solid var(--pink);
+      padding-left: 0.6rem;
+      color: var(--ink);
+    }
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      border: 1px solid var(--line);
+      transition: transform 0.15s;
+    }
+    .card:hover { transform: translateY(-3px); }
+    .card h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .card p { font-size: 0.85rem; color: var(--ink-soft); }
+    .card .meta { font-size: 0.75rem; color: var(--pink-deep); margin-top: 0.5rem; }
+
+    /* 紧凑列表 */
+    .list-compact { display: flex; flex-direction: column; gap: 0.6rem; }
+    .list-compact li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 0.4rem;
+    }
+    .list-compact .tag {
+      background: var(--pink);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    /* 对照面板 */
+    .compare-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .compare-panel > div { padding: 1rem; }
+    .compare-panel > div:first-child { background: #fdf1f5; border-right: 1px solid var(--line); }
+    .compare-panel h3 { font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .compare-panel ul { font-size: 0.85rem; color: var(--ink-soft); }
+
+    /* FAQ 折叠 */
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.9rem;
+      margin-bottom: 0.6rem;
+      box-shadow: var(--shadow);
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: '+'; font-size: 1.2rem; color: var(--pink-deep); }
+    details[open] summary::after { content: '−'; }
+    details p { margin-top: 0.6rem; font-size: 0.88rem; color: var(--ink-soft); }
+
+    /* 编号步骤 */
+    .steps { counter-reset: step; display: flex; flex-direction: column; gap: 0.8rem; }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding-left: 2.2rem;
+      font-size: 0.9rem;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0; top: 0;
+      background: var(--pink-deep);
+      color: #fff;
+      width: 1.5rem; height: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    /* 时间线 */
+    .timeline { border-left: 3px solid var(--pink); padding-left: 1.2rem; }
+    .timeline li { margin-bottom: 0.9rem; font-size: 0.9rem; position: relative; }
+    .timeline li::before {
+      content: '';
+      position: absolute;
+      left: -1.45rem; top: 0.45rem;
+      width: 10px; height: 10px;
+      background: var(--pink-deep);
+      border-radius: 50%;
+      border: 2px solid var(--cream);
+    }
+    .timeline time { font-weight: 600; display: block; font-size: 0.8rem; color: var(--pink-deep); }
+
+    /* 标签索引 */
+    .tag-index { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag-index a {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 99px;
+      padding: 0.2rem 0.8rem;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+    .tag-index a:hover { background: var(--pink); color: #fff; text-decoration: none; }
+
+    /* 引语卡 */
+    .quote-card {
+      background: #fff;
+      border-left: 6px solid var(--accent);
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      box-shadow: var(--shadow);
+      margin-bottom: 0.8rem;
+    }
+    .quote-card .author { font-style: normal; font-weight: 600; margin-top: 0.4rem; font-size: 0.85rem; color: var(--ink); }
+
+    /* 评论 */
+    .comment-list { display: flex; flex-direction: column; gap: 0.8rem; }
+    .comment {
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
+    }
+    .comment .c-user { font-weight: 600; color: var(--pink-deep); font-size: 0.8rem; }
+    .comment .c-text { color: var(--ink); }
+
+    /* 侧栏 */
+    .sidebar { display: flex; flex-direction: column; gap: var(--space-lg); }
+    .sidebar .widget {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+    .sidebar .widget h2 { font-size: 1rem; margin-bottom: 0.6rem; border-left: 4px solid var(--pink); padding-left: 0.5rem; }
+    .sidebar .widget ul { font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .sidebar .widget li { border-bottom: 1px dashed var(--line); padding-bottom: 0.3rem; }
+    .sidebar .widget li:last-child { border: none; }
+
+    /* 搜索无结果 */
+    .search-feedback { font-size: 0.85rem; color: var(--pink-deep); margin-top: 0.3rem; display: none; }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.5rem;
+      background: var(--pink-deep);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 2.6rem; height: 2.6rem;
+      font-size: 1.1rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      z-index: 90;
+    }
+    .back-top.show { display: flex; }
+
+    /* 页尾 */
+    .site-footer {
+      background: #2e2228;
+      color: #ddd;
+      padding: var(--space-lg) 1rem;
+      font-size: 0.85rem;
+    }
+    .footer-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: var(--space-lg);
+    }
+    .site-footer h3 { color: #fff; font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .site-footer a { color: #f7a1b5; }
+    .site-footer a:hover { text-decoration: underline; }
+    .footer-bottom {
+      max-width: var(--maxw);
+      margin: 1.5rem auto 0;
+      padding-top: 1rem;
+      border-top: 1px solid #4a3b43;
+      font-size: 0.78rem;
+      color: #9a8b93;
+      text-align: center;
+    }
+
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .main-layout { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { height: 180px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      body { padding-top: 80px; }
+      .nav-main { display: none; }
+      .nav-main.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,247,240,0.98); padding: 0.6rem 1rem; border-bottom: 1px solid var(--line); }
+      .menu-toggle { display: inline-block; }
+      .header-inner { position: relative; }
+      .header-search { display: none; }
+      .compare-panel { grid-template-columns: 1fr; }
+      .compare-panel > div:first-child { border-right: none; border-bottom: 1px solid var(--line); }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-text h1 { font-size: 1.8rem; }
+    }
+    @media (max-width: 360px) {
+      .hero-text h1 { font-size: 1.5rem; }
+      .brand { font-size: 0.95rem; }
+      .brand svg { width: 28px; height: 28px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+      .card:hover { transform: none; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="top-announce" role="status">
+    <strong>兔崽baby</strong> 每日大赛 11 月 8 日主题公布：<strong>“像素小兔”</strong> 作品征集截止 22:00，评审团轮换规则同步更新
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <rect width="100" height="100" rx="22" fill="#ffb7c5"/>
+          <circle cx="32" cy="36" r="9" fill="#fff"/>
+          <circle cx="68" cy="36" r="9" fill="#fff"/>
+          <circle cx="32" cy="36" r="4" fill="#5e3b4a"/>
+          <circle cx="68" cy="36" r="4" fill="#5e3b4a"/>
+          <ellipse cx="50" cy="62" rx="11" ry="8" fill="#fff"/>
+          <path d="M42 62 Q50 70 58 62" stroke="#5e3b4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>兔崽baby</span> tuzaibaby每日大赛
+      </div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      <nav class="nav-main" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">赛事概览</a>
+        <a href="/#featured">精选作品</a>
+        <a href="/#latest">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deepdive">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#reviews">用户评论</a>
+      </nav>
+      <div class="header-search">
+        <input type="search" id="siteSearch" placeholder="搜索作品/主题" aria-label="站内搜索">
+        <button id="searchBtn" type="button">查</button>
+      </div>
+      <div class="search-feedback" id="searchFeedback">没有找到相关条目，请换个词试试。</div>
+    </div>
+  </header>
+
+  <!-- 主题首屏 -->
+  <section class="hero container">
+    <div class="hero-text">
+      <h1><em>兔崽baby</em> tuzaibaby每日大赛</h1>
+      <p class="hero-desc">每天一个创意命题，评审团在24小时内完成打分。11月8日主题“像素小兔”，参赛作品限定 800×800 画布，禁止使用生成式填充。本页汇总当天赛程、往期高分作品拆解与规则变动记录。</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="/#latest">看今日赛程</a>
+        <a class="btn-outline" href="/#deepdive">读评审拆解</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="bubble" style="width:120px;height:120px;top:10px;left:20px;"></div>
+      <div class="bubble" style="width:80px;height:80px;bottom:10px;right:20px;background:var(--accent);opacity:0.3;"></div>
+      <svg viewBox="0 0 300 240" fill="none">
+        <rect x="40" y="30" width="220" height="150" rx="18" fill="#fff" stroke="#eedde4" stroke-width="2"/>
+        <circle cx="105" cy="80" r="12" fill="#f7a1b5"/>
+        <circle cx="195" cy="80" r="12" fill="#f7a1b5"/>
+        <circle cx="105" cy="80" r="5" fill="#5e3b4a"/>
+        <circle cx="195" cy="80" r="5" fill="#5e3b4a"/>
+        <ellipse cx="150" cy="120" rx="18" ry="12" fill="#f7a1b5" opacity="0.5"/>
+        <path d="M132 118 Q150 135 168 118" stroke="#5e3b4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <text x="150" y="175" text-anchor="middle" font-size="11" fill="#6f5f67" font-family="sans-serif">今日命题：像素小兔</text>
+        <circle cx="150" cy="210" r="18" fill="#8fc9c1" opacity="0.3"/>
+        <text x="150" y="214" text-anchor="middle" font-size="10" fill="#5e3b4a" font-family="sans-serif">24h</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 主内容区：左侧单栏 + 右侧栏 -->
+  <div class="main-layout container">
+
+    <main>
+      <!-- 领域概览 -->
+      <section class="section" id="overview">
+        <h2>赛事概览：每日命题与评审节奏</h2>
+        <p class="section-sub">2026年11月8日第 312 期，评审团由 7 人组成，含 2 名飞行评审。</p>
+        <div class="card-grid">
+          <div class="card">
+            <h3>命题发布机制</h3>
+            <p>每天 09:00 在官方频道公布关键词，参赛者需在 22:00 前提交单幅作品。关键词由评审团轮值出题，11月8日为“像素小兔”。</p>
+            <div class="meta">出题人：@棉花糖小队长</div>
+          </div>
+          <div class="card">
+            <h3>评分维度权重</h3>
+            <p>创意切题 40%、完成度 30%、色彩情绪 20%、构图 10%。飞行评审在 22:30 前完成独立打分，去掉一个最高分和一个最低分。</p>
+            <div class="meta">数据截至 11/07 第311期</div>
+          </div>
+          <div class="card">
+            <h3>参赛规模</h3>
+            <p>第311期收到 437 份有效投稿，较第310期增加 28 份。其中新参赛者 96 人，占比 22%。</p>
+            <div class="meta">统计：@赛事小助手</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="section" id="featured">
+        <h2>精选推荐：往期高分作品拆解</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>第310期冠军《兔耳宇航员》</h3>
+            <p>作者 @兔叽搬运工。用 6 种灰度表现头盔反光，背景星点手绘而非笔刷，评审@阿卷 给出“切题与想象力的平衡”评语。</p>
+            <div class="meta">得分 94.5</div>
+          </div>
+          <div class="card">
+            <h3>第309期亚军《毛线兔窝》</h3>
+            <p>作者 @线团星球。毛线纹理用 2px 笔触重复 1400 次完成，评审指出“局部过密但整体氛围赢回分数”。</p>
+            <div class="meta">得分 91.2</div>
+          </div>
+          <div class="card">
+            <h3>第308期特别提名《雨夜兔灯》</h3>
+            <p>作者 @小雨靴。霓虹反光采用叠加图层，但主体轮廓模糊被扣 3 分。创意分 38/40，完成度 22/30。</p>
+            <div class="meta">得分 86.8</div>
+          </div>
+          <div class="card">
+            <h3>第307期飞行评审推荐《折纸兔》</h3>
+            <p>@折折不休 用单色铅笔模拟折纸阴影，飞行评审@大栗 认为“限制条件下最干净的执行”。</p>
+            <div class="meta">得分 89.0</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest">
+        <h2>最新动态：今天与昨天的赛程变动</h2>
+        <div class="list-compact">
+          <li><span><strong>今天 08:52</strong> 第312期关键词“像素小兔”公布，同时开放提交通道。</span><span class="tag">进行中</span></li>
+          <li><span><strong>昨天 21:40</strong> 第311期评审结果公示，前三名作品进入月度精选池。</span><span class="tag">已结束</span></li>
+          <li><span><strong>昨天 15:10</strong> 评审@阿卷 在动态里说明第311期“构图分”争议：两名选手分差 0.5 源于左上角留白判断。</span><span class="tag">争议回应</span></li>
+          <li><span><strong>11月6日 18:00</strong> 赛事新增“飞行评审”制度，每期随机邀请 2 名往期冠军参与打分。</span><span class="tag">规则更新</span></li>
+          <li><span><strong>11月5日 10:30</strong> 第310期冠军 @兔叽搬运工 发布创作过程录屏，时长 47 分钟。</span><span class="tag">延伸内容</span></li>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="categories">
+        <h2>分类入口：按主题与形式查找</h2>
+        <div class="tag-index">
+          <a href="/#featured">像素风兔崽作品</a>
+          <a href="/#featured">像素小兔命题</a>
+          <a href="/#deepdive">评审评分规则</a>
+          <a href="/#latest">每日大赛日程表</a>
+          <a href="/#reviews">参赛者吐槽区</a>
+          <a href="/#faq">每日大赛参赛步骤</a>
+          <a href="/#timeline">赛事变动时间线</a>
+          <a href="/#creator">往期冠军创作谈</a>
+          <a href="/#supplement">作品可信度分层</a>
+        </div>
+      </section>
+
+      <!-- 深度解析（全页唯一主体阅读区） -->
+      <section class="section" id="deepdive">
+        <h2>深度解析：每日大赛真的只看“切题”吗？</h2>
+        <p class="section-sub">判断基于 2026年10月至11月共 8 期评审记录，共 3,241 份作品数据。</p>
+
+        <h3>切题分权重被高估：实际得分贡献约 31%</h3>
+        <p>评审表中“创意切题”权重写着 40%，但把第 305 期至第 311 期 437 份作品的各项分数做回归，切题分与总分的相关系数是 0.56，而完成度分与总分的相关系数达到 0.71。原因是切题分区间窄：82% 的作品切题分落在 30—38 之间，区分度被压缩。完成度分区间则从 12 到 29 都有分布。一个可核对例子：第 310 期《兔耳宇航员》切题分 37，完成度 28，总分 94.5；同期的《兔子日历》切题分 39，但完成度仅 15，总分 72.3。切题分更高的作品反而落榜。</p>
+
+        <h3>“飞行评审”制度带来 0.5—1.2 分的波动</h3>
+        <p>11月6日起每期加入 2 名飞行评审，其打分与常驻评审平均分差在 11月7日第311期为 0.8 分。具体到 @大栗 与 @阿卷 两位飞行评审：@大栗 给 6 份作品打出了低于常驻均值 1.5 分以上的分数，理由是“局部完成度不足”；@阿卷 则给 3 份作品高出常驻均值 1 分，集中在色彩情绪项。制度设计者@棉花糖小队长 在 11月6日 18:00 的动态里承认“目前飞行评审只参与打分，不参与合议”，因此其极端分数虽会被去掉，但若两名飞行评审同时偏低，仍可能拉低最终均分。</p>
+
+        <h3>第311期争议：留白算不算“完成度不足”？</h3>
+        <p>作品《白兔与黑兔》（作者@双色球）总得分 85.4，排名第 19。评审@阿卷 在评语中写“左上角留白让画面失衡”，扣完成度 2 分；另一评审@圆规 则认为“留白是负空间设计”。两者说法差异被记录在 11月7日 21:40 公示的评审表里。事实层面：作品实际完成度分 24/30，@阿卷 打 22，@圆规 打 27，差 5 分。赛事方11月8日 07:10 的公告提及“下期起在完成度评分项后增加‘构图完整性’子项说明”，但未明确是否改变现有扣分方式。以上争议属于评审口径差异，尚未形成规则修订。</p>
+
+        <h3>参赛者集中在哪些主题词？</h3>
+        <p>把 8 期关键词和投稿标题做词频统计，“兔”“光”“耳朵”出现最多。第 307 期关键词“夜间小兔”收到 502 份投稿，其中标题含“灯”的 87 份，含“月亮”的 61 份。而第 305 期关键词“复古兔”仅 289 份，评审@圆规 分析“复古的想象空间窄，参赛者不好入手”。这一数据可以对照赛事方 11月5日 发布的《命题选词说明》，其中提到“避免单义具象词”，与投稿量趋势一致。</p>
+      </section>
+
+      <!-- 体验指南（编号步骤） -->
+      <section class="section" id="guide">
+        <h2>体验指南：第一次参加每日大赛的五个步骤</h2>
+        <ol class="steps">
+          <li>09:00 刷新官方频道，确认当天关键词；11月8日是“像素小兔”，画布限定 800×800。</li>
+          <li>构思阶段先看第 310 期的评审语，理解“切题”和“完成度”如何被分开打分。</li>
+          <li>绘制时保留图层文件，22:00 前提交需附最终稿与 1 张过程截图。</li>
+          <li>提交后关注 22:30 的飞行评审轮换名单，若被抽中会收到站内通知。</li>
+          <li>次日 10:00 查看评审表，重点读自己作品的扣分项，可私信评审要求解释（限 1 次）。</li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <h2>常见问题：参赛规则与评审细节</h2>
+        <details>
+          <summary>每日大赛可以用AI辅助生成吗？</summary>
+          <p>赛事规则第 4.2 条明确：允许使用笔刷、纹理参考，但生成式填充、AI 扩图工具在 11月1日起被禁止。评审会抽查提交源文件，若发现生成痕迹则取消当期成绩。</p>
+        </details>
+        <details>
+          <summary>飞行评审是怎么选出来的？</summary>
+          <p>赛事方从过去 6 个月的冠亚军里随机抽取，每期 2 人。11月6日 18:00 的新规写明飞行评审只打分不参与合议，但分数计入总分。被抽中者会提前 24 小时收到站内信。</p>
+        </details>
+        <details>
+          <summary>错过22:00提交时间还能补交吗？</summary>
+          <p>通道在 22:00 准时关闭，没有补交入口。若因系统故障无法提交，需在 30 分钟内将作品截图与提交时间截图发至赛事邮箱，由值班评审@阿卷 人工核验，10月31日 曾有 2 例通过。</p>
+        </details>
+        <details>
+          <summary>“像素小兔”主题的评审侧重点有哪些？</summary>
+          <p>命题要求像素风格，评审会额外看“像素对齐”和“色板控制”。第309期类似命题中，色彩数超过 32 色的作品完成度分平均被扣 1.8 分。</p>
+        </details>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="reviews">
+        <h2>用户评论：参赛者与围观者的真实声音</h2>
+        <div class="comment-list">
+          <div class="comment">
+            <div class="c-user">@线团星球</div>
+            <div class="c-text">第309期《毛线兔窝》的评分我到现在没想通，完成度 25 分，但评审说局部过密。密度和完成度到底怎么界定？</div>
+          </div>
+          <div class="comment">
+            <div class="c-user">@像素小工</div>
+            <div class="c-text">今天的“像素小兔”限定 800×800，我画到 780 就停，多出来的 20 像素留给阴影，感觉比昨天好入手。</div>
+          </div>
+          <div class="comment">
+            <div class="c-user">@南风慢</div>
+            <div class="c-text">飞行评审加分的那条规则太模糊。@大栗 在第311期扣了 6 份作品的分，理由全是“局部完成度不足”，但具体哪一块没写，让人怎么改。</div>
+          </div>
+          <div class="comment">
+            <div class="c-user">@双色球</div>
+            <div class="c-text">《白兔与黑兔》那个留白我认，但 @阿卷 的评语说“失衡”，@圆规 说“负空间”，两个评审标准不统一，我们只能猜。</div>
+          </div>
+          <div class="comment">
+            <div class="c-user">@折折不休</div>
+            <div class="c-text">赛事时间线里 11月6日的飞行评审制度加得好，至少给往期冠军一个发声渠道，不过只打分不议分，总差一口气。</div>
+          </div>
+          <div class="comment">
+            <div class="c-user">@兔叽搬运工</div>
+            <div class="c-text">第310期《兔耳宇航员》的录屏已经放了，47分钟，重点在前 12 分钟铺底的灰度选择，有需要的可以看。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <h2>相关资讯：赛事周边与规则变动</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>命题选词说明发布</h3>
+            <p>11月5日 赛事方发布《命题选词说明》，提到避免单义具象词。数据支持：第305期“复古兔”投稿量最低，仅289份。</p>
+            <div class="meta">来源：赛事公告</div>
+          </div>
+          <div class="card">
+            <h3>月度精选池规则</h3>
+            <p>11月4日 起，每期前三名作品自动进入月度精选池，月末由 7 名评审集体投票选出月度冠军，奖励为下月飞行评审直通资格。</p>
+            <div class="meta">来源：@赛事小助手</div>
+          </div>
+          <div class="card">
+            <h3>投稿审核时间缩短</h3>
+            <p>11月3日 起，人工审核平均时长从 48 分钟降到 31 分钟，审核员从 3 人增加到 5 人。11月7日 437 份投稿在 40 分钟内全部过审。</p>
+            <div class="meta">来源：后台公告</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关推荐（补充板块-时间线） -->
+      <section class="section" id="timeline">
+        <h2>相关推荐：赛事变动时间线</h2>
+        <ul class="timeline">
+          <li><time>2026-11-06 18:00</time> 飞行评审制度上线，每期随机抽 2 名往期冠军。</li>
+          <li><time>2026-11-05 10:30</time> 第310期冠军创作录屏发布，47 分钟。</li>
+          <li><time>2026-11-04 09:00</time> 月度精选池规则发布，前三名直通。</li>
+          <li><time>2026-11-03 14:20</time> 审核员增至 5 人，平均审核时长 31 分钟。</li>
+          <li><time>2026-11-01 00:00</time> 禁止生成式 AI 填充，违规取消当期成绩。</li>
+        </ul>
+      </section>
+
+      <!-- 创作者证言 / 引语卡 -->
+      <section class="section" id="creator">
+        <h2>创作者证言：往期冠军怎么说</h2>
+        <div class="quote-card">
+          “第310期画《兔耳宇航员》时，灰度用了 6 档，评审@阿卷 说关键在‘切题与想象力的平衡’。其实我前 40 分钟都在调一个像素的亮度。”
+          <div class="author">—— @兔叽搬运工，第310期冠军</div>
+        </div>
+        <div class="quote-card">
+          “我不觉得留白就是完成度不够。第311期的《白兔与黑兔》如果放到插画比赛，可能得分更高。每日大赛的评分口径太细了。”
+          <div class="author">—— @双色球，第311期参赛者</div>
+        </div>
+      </section>
+
+      <!-- 可信度分层（对照面板） -->
+      <section class="section" id="supplement">
+        <h2>作品可信度分层：怎么判断一份参赛作品</h2>
+        <div class="compare-panel">
+          <div>
+            <h3>可核对事实</h3>
+            <ul>
+              <li>第311期投稿 437 份，评审公示表可查。</li>
+              <li>11月6日 18:00 飞行评审制度截图。</li>
+              <li>第310期冠军录屏 47 分钟，时间戳完整。</li>
+            </ul>
+          </div>
+          <div>
+            <h3>说法与推测</h3>
+            <ul>
+              <li>“切题分权重被高估”是数据回归结果，非官方定论。</li>
+              <li>留白争议仅来自两位评审的评分差，赛事方未修改规则。</li>
+              <li>飞行评审是否影响公平，尚缺长期样本。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 侧栏 -->
+    <aside class="sidebar" aria-label="侧栏">
+      <div class="widget">
+        <h2>今日赛程速览</h2>
+        <ul>
+          <li>09:00 命题公布</li>
+          <li>09:30 提交开启</li>
+          <li>22:00 提交截止</li>
+          <li>22:30 飞行评审打分</li>
+          <li>次日 10:00 结果公示</li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h2>热门标签</h2>
+        <ul>
+          <li><a href="/#featured">像素小兔作品</a></li>
+          <li><a href="/#deepdive">评审评分规则</a></li>
+          <li><a href="/#guide">参赛步骤</a></li>
+          <li><a href="/#timeline">赛事时间线</a></li>
+          <li><a href="/#supplement">可信度分层</a></li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h2>最近更新</h2>
+        <ul>
+          <li>11月8日 08:52 命题发布</li>
+          <li>11月7日 21:40 结果公示</li>
+          <li>11月6日 18:00 飞行评审制度</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>兔崽baby tuzaibaby每日大赛</h3>
+        <p>每日一个命题，24 小时完成，评审团公开打分。赛事变动、争议记录与参赛指南汇总于此。</p>
+      </div>
+      <div>
+        <h3>分组入口</h3>
+        <ul>
+          <li><a href="/#overview">赛事概览</a></li>
+          <li><a href="/#featured">精选作品</a></li>
+          <li><a href="/#deepdive">深度解析</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>示例数据说明</h3>
+        <p>页面内投稿量、评审日期与评语均为示例数据，用于展示赛事运行方式，实际以官方频道发布为准。</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      更新时间：2026-11-08 08:52 · 对应正文可核对更新项：今日命题公布、昨日评审结果公示 · 版权归赛事示例说明所有
+    </div>
+  </footer>
+
+  <!-- 内联脚本 -->
+  <script>
+    // 菜单切换
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.getElementById('mainNav');
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', function () {
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        mainNav.classList.toggle('open');
+      });
+      // 点击导航链接后收起菜单
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 700) {
+            mainNav.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+
+    // 站内搜索（本地查找）
+    const searchInput = document.getElementById('siteSearch');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchFeedback = document.getElementById('searchFeedback');
+    function performSearch() {
+      const q = searchInput.value.trim().toLowerCase();
+      if (!q) { searchFeedback.style.display = 'none'; return; }
+      const content = document.body.innerText.toLowerCase();
+      if (content.includes(q)) {
+        searchFeedback.textContent = '找到包含“' + q + '”的内容，已在页面中。';
+        searchFeedback.style.display = 'block';
+      } else {
+        searchFeedback.textContent = '没有找到相关条目，请换个词试试。';
+        searchFeedback.style.display = 'block';
+      }
+    }
+    if (searchBtn && searchInput) {
+      searchBtn.addEventListener('click', performSearch);
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') performSearch();
+      });
+    }
+
+    // 回到顶部按钮
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 480) {
+        backTop.classList.add('show');
+      } else {
+        backTop.classList.remove('show');
+      }
+    });
+    backTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 平滑滚动预留吸顶偏移（用于锚点点击）
+    document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').slice(2);
+        const target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          const headerHeight = 88;
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          if (window.innerWidth <= 700) {
+            mainNav.classList.remove('open');
+            if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+    // 结构化数据 WebSite 与 FAQPage
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "兔崽baby tuzaibaby每日大赛",
+        "description": "每日命题、评审与作品解析",
+        "url": "https://example.com/"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "每日大赛可以用AI辅助生成吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "赛事规则第4.2条明确：允许使用笔刷、纹理参考，但生成式填充、AI扩图工具在11月1日起被禁止。评审会抽查提交源文件，若发现生成痕迹则取消当期成绩。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "飞行评审是怎么选出来的？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "赛事方从过去6个月的冠亚军里随机抽取，每期2人。11月6日18:00的新规写明飞行评审只打分不参与合议，但分数计入总分。被抽中者会提前24小时收到站内信。"
+            }
+          }
+        ]
+      }
+    ];
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(structuredData);
+    document.head.appendChild(script);
+  </script>
+</body>
+</html>
